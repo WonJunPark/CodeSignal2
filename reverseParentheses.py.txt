@@ -1,0 +1,33 @@
+#while문
+
+def reverseParentheses(s):
+
+    s = 'Code(Cha(lle)nge)'
+	
+
+    while '(' in s : #repeat
+        
+        fb = s.rfind('(') #first blanket
+        bb = s[fb:].find(')') #back blanket
+        
+        s = s[:fb] + s[fb+1:fb+bb][::-1] + s[fb+bb+1:] #remove blanket and reversed
+    
+    return s
+
+
+#재귀함수
+
+def reverseParentheses(s):
+
+    s = 'Code(Cha(lle)nge)'
+
+    for i in range(len(s)) :
+        
+        if s[i] == '(' :
+            fb = i
+            
+        elif s[i] ==')' :
+            bb = i
+            return reverseParentheses(s = s[:fb] + s[fb+1:bb][::-1] + s[bb+1:]) #reverseParentheses함수
+            
+    return s

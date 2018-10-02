@@ -1,0 +1,12 @@
+def alternatingSums(a):
+
+    a = [50, 60, 60, 45, 70]
+
+    odd = 0 #홀,짝 초기화
+    even = 0
+    
+    for i in range(len(a)) :
+        if i%2 == 0 : #홀수, 0부터 시작하기 때문
+            odd += a[i]
+        else :
+            even += a[i]
